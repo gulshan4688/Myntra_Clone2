@@ -3,7 +3,7 @@
     "name":"myntra Clone",
     "build":
         {
-            "use":"@vercel/node"
+            
         }
     ,
     "routes":[
