@@ -11,7 +11,7 @@ const FetchItems = () => {
     dispatch(fetchStatusActions.markFetchingStarted());
     const controller = new AbortController();
     const signal = controller.signal;
-    fetch("http://localhost:8080/items", { signal })
+    fetch(process.env.BASE_URL, { signal })
       .then((res) => res.json())
       .then(({ items }) => {
         dispatch(fetchStatusActions.markFetchDone());
