@@ -1,12 +1,12 @@
 {
     "version":1,
     "name":"myntra Clone",
-    "build":[
+    "build":
         {
             "src":"./app.js",
             "use":"@vercel/node"
         }
-    ],
+    ,
     "routes":[
         {
             "src":"/(.*)",
