@@ -10,9 +10,9 @@ const FetchItems = () => {
   useEffect(() => {
     if (fetchStatus.fetchDone) return;
     dispatch(fetchStatusActions.markFetchingStarted());
-    const controller = new AbortController();
-    const signal = controller.signal;
-    fetch(BASEURL, { signal })
+    // const controller = new AbortController();
+    // const signal = controller.signal;
+    fetch(`${BASEURL}/items`)
       .then((res) => res.json())
       .then(({ items }) => {
         dispatch(fetchStatusActions.markFetchDone());
@@ -27,9 +27,9 @@ const FetchItems = () => {
         }
       });
 
-    return () => {
-      controller.abort();
-    };
+    // return () => {
+    //   controller.abort();
+    // };
   }, [fetchStatus]);
   return (
     <>
